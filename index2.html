@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://localhost:5001/Wix.js"></script>
+
+  </head>
+  <body>
+    <h1 id="header">Client</h1>
+  </body>
+</html>
+
+<script>
+  var widgetId = "14fdfe75-e331-5133-8b64-08938ac6a094";
+  Wix.requireApi(widgetId, api => {
+      api[0].API.open("http://example.com/");
+  });
+
+</script>
