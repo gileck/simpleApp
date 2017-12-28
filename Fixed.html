@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="Wix.js"></script>
+
+  </head>
+  <body>
+    <h1 id="header">API Provider</h1>
+  </body>
+</html>
+
+<script>
+    Wix.registerApi({
+        open: function(url) {
+            Wix.openPopup(url, 300, 300);
+        }
+    });
+</script>
+
+<!--https://gileck.github.io/simpleApp/index2.html-->
