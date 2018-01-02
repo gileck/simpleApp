@@ -3761,15 +3761,15 @@
             };
 
             var requireSingletonAPI = function requireSingletonAPI(appDefId, componentType, onSuccess, onFailure) {
-                var callback = function callback(compId) {
-                    if (!compId) {
+                var callback = function callback(apiName) {
+                    if (!apiName) {
                         if (onFailure) {
                             onFailure();
                         }
                         return;
                     }
                     scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
-                        window.pmrpc.api.request(compId, { target: window.parent }).then(function (api) {
+                        window.pmrpc.api.request(apiName, { target: window.parent }).then(function (api) {
                             onSuccess(api);
                         }).catch(function () {
                             if (onFailure) {
@@ -3784,7 +3784,7 @@
             var registerApi = function registerApi(apiObject) {
                 var compId = urlUtils.getQueryParameter("compId");
                 scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
-                    window.pmrpc.api.set(compId, apiObject);
+                    window.pmrpc.api.set('tpa_public_api_' + compId, apiObject);
                     postMessage.sendMessage(postMessage.MessageTypes.REGISTER_API, namespace);
                 });
             };
@@ -8803,8 +8803,8 @@
             WIX_VIDEO: '14409595-f076-4753-8303-9a86f9f71469',
             WIX_SOUNDCLOUD: '14a85b13-d7da-ee8e-7290-3b93340f63fa',
             Type: {
-                Page: 'Page',
-                Widget: 'Widget'
+                PAGE: 'Page',
+                WIDGET: 'Widget'
             }
         };
 

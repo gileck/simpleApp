@@ -12,11 +12,15 @@
 </html>
 
 <script>
-//    Wix.registerApi({
-//        open: function(url) {
-//            Wix.openPopup(url, 300, 300);
-//        }
-//    });
+    function registerAPI() {
+        Wix.registerApi({
+            open: function(url) {
+                Wix.openPopup(url, 300, 300);
+            }
+        });
+    }
+
+    registerAPI();
 </script>
 
 <!--https://gileck.github.io/simpleApp/index2.html-->
