@@ -60,7 +60,7 @@
     /******/ 	__webpack_require__.p = "";
     /******/
     /******/ 	// Load entry module and return exports
-    /******/ 	return __webpack_require__(__webpack_require__.s = 22);
+    /******/ 	return __webpack_require__(__webpack_require__.s = 26);
     /******/ })
 /************************************************************************/
 /******/ ([
@@ -222,7 +222,8 @@
             IS_APPLICATION_INSTALLED: 'isApplicationInstalled',
             REQUIRE_SINGELTON_API: 'requireSingletonAPI',
             REGISTER_API: 'registerApi',
-            WAIT_FOR_WORKER_TO_BE_READY: 'waitForWixCodeWorkerToBeReady'
+            WAIT_FOR_WORKER_TO_BE_READY: 'waitForWixCodeWorkerToBeReady',
+            FIRE_EVENT: 'fireEvent'
         };
 
         var callId = 1;
@@ -1676,7 +1677,7 @@
         "use strict";
         var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Error */ 12), __webpack_require__(/*! WixDataCursor */ 28)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Error, WixDataCursor) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Error */ 14), __webpack_require__(/*! WixDataCursor */ 33)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Error, WixDataCursor) {
 
             var getWixError = function getWixError(errorCode) {
                 var wixErrorMessage = Error.WIX_ERROR;
@@ -1742,7 +1743,7 @@
         "use strict";
         var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Events */ 7), __webpack_require__(/*! privates/templateUtils */ 26)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (postMessage, utils, Events, templateUtils) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Events */ 7), __webpack_require__(/*! privates/templateUtils */ 31)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (postMessage, utils, Events, templateUtils) {
 
             var styles = {
                 siteColors: null,
@@ -1869,202 +1870,6 @@
 
         /***/ }),
     /* 10 */
-    /*!***************************************!*\
-     !*** ./js/modules/WindowPlacement.js ***!
-     \***************************************/
-    /*! dynamic exports provided */
-    /*! all exports used */
-    /***/ (function(module, exports, __webpack_require__) {
-
-        "use strict";
-        var __WEBPACK_AMD_DEFINE_RESULT__;
-
-        /**
-         * Represents a predefined values to position a Wix popup windows without the hassle of figuring out the position yourself.
-         * Can be used to position the window relatively (to the calling widget) or absolutely (to the view port).
-         *
-         * @memberof Wix
-         * @namespace Wix.WindowPlacement
-         */
-        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-            return {
-                /**
-                 * Top left placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                TOP_LEFT: 'TOP_LEFT',
-
-                /**
-                 * Top right placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                TOP_RIGHT: 'TOP_RIGHT',
-
-                /**
-                 * Bottom right placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                BOTTOM_RIGHT: 'BOTTOM_RIGHT',
-
-                /**
-                 * Bottom left placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                BOTTOM_LEFT: 'BOTTOM_LEFT',
-
-                /**
-                 * Top center placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                TOP_CENTER: 'TOP_CENTER',
-
-                /**
-                 * Center right placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                CENTER_RIGHT: 'CENTER_RIGHT',
-
-                /**
-                 * Bottom center placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                BOTTOM_CENTER: 'BOTTOM_CENTER',
-
-                /**
-                 * Center left placement.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 */
-                CENTER_LEFT: 'CENTER_LEFT',
-
-                /**
-                 * (FIXED origin only) center of the screen.
-                 * @memberof Wix.WindowPlacement
-                 * @since 1.17.0
-                 * @deprecated
-                 */
-                CENTER: 'CENTER'
-            };
-        }).call(exports, __webpack_require__, exports, module),
-        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-        /***/ }),
-    /* 11 */
-    /*!************************************!*\
-     !*** ./js/modules/WindowOrigin.js ***!
-     \************************************/
-    /*! dynamic exports provided */
-    /*! all exports used */
-    /***/ (function(module, exports, __webpack_require__) {
-
-        "use strict";
-        var __WEBPACK_AMD_DEFINE_RESULT__;
-
-        /**
-         * Represents a Wix popup window origin. A window can be positioned where it is origin is the view port (0,0) or
-         * where the origin is another widget (x,y).
-         * @memberof Wix
-         * @namespace Wix.WindowOrigin
-         */
-        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-            return {
-                /**
-                 * Default position. The popup will be placed inside the browser viewport.
-                 * @see WindowOrigin.FIXED
-                 * @memberof Wix.WindowOrigin
-                 * @since 1.17.0
-                 */
-                DEFAULT: 'FIXED',
-
-                /**
-                 * Fixed position. The popup will be placed inside the browser viewport.
-                 * @memberof Wix.WindowOrigin
-                 * @since 1.17.0
-                 */
-                FIXED: 'FIXED',
-
-                /**
-                 * Relative position. The popup will be placed relative to the opening widget (Not supported for Page).
-                 * @memberof Wix.WindowOrigin
-                 * @since 1.17.0
-                 */
-                RELATIVE: 'RELATIVE',
-
-                /**
-                 * Absolute position. The popup will be placed relative to a given x,y coordinates that their origin is the top-left corner of the widget.
-                 * @memberof Wix.WindowOrigin
-                 * @author mayah@wix.com
-                 * @since 1.28.0
-                 */
-                ABSOLUTE: 'ABSOLUTE'
-            };
-        }).call(exports, __webpack_require__, exports, module),
-        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-        /***/ }),
-    /* 12 */
-    /*!*****************************!*\
-     !*** ./js/modules/Error.js ***!
-     \*****************************/
-    /*! dynamic exports provided */
-    /*! all exports used */
-    /***/ (function(module, exports, __webpack_require__) {
-
-        "use strict";
-        var __WEBPACK_AMD_DEFINE_RESULT__;
-
-        /**
-         * This is the description for the Error namespace.
-         * @memberof Wix
-         * @namespace Wix.Error
-         */
-        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
-            return {
-                /**
-                 * Indicates an unknown error happened on Wix side which could not be recovered. When handling this error, you can try again or prompt the user with an error dialog.
-                 * @memberof Wix.Error
-                 * @since 1.27.0
-                 */
-                WIX_ERROR: 'WIX_ERROR',
-
-                /**
-                 * Indicates the activity could not be found.
-                 * @memberof Wix.Error
-                 * @since 1.27.0
-                 */
-                NOT_FOUND: 'NOT_FOUND',
-
-                /**
-                 * Indicates the dates you provided are in the wrong format or are not valid date ranges.
-                 * @memberof Wix.Error
-                 * @since 1.27.0
-                 */
-                BAD_REQUEST: 'BAD_REQUEST',
-
-                /**
-                 * @memberof Wix.Error
-                 * @since 1.27.0
-                 */
-                INVALID_SCHEMA: 'INVALID_SCHEMA',
-
-                /**
-                 * @memberof Wix.Error
-                 * @since 1.46.0
-                 */
-                FORBIDDEN: 'FORBIDDEN'
-            };
-        }).call(exports, __webpack_require__, exports, module),
-        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-        /***/ }),
-    /* 13 */
     /*!********************************!*\
      !*** ./js/modules/Settings.js ***!
      \********************************/
@@ -2080,7 +1885,7 @@
          * @memberof Wix
          * @namespace Wix.Settings
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! WindowPlacement */ 10), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (WindowPlacement, utils, reporter, postMessage, sharedAPI) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! WindowPlacement */ 11), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (WindowPlacement, utils, reporter, postMessage, sharedAPI) {
 
             var namespace = 'Settings';
 
@@ -3005,7 +2810,260 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
+    /* 11 */
+    /*!***************************************!*\
+     !*** ./js/modules/WindowPlacement.js ***!
+     \***************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * Represents a predefined values to position a Wix popup windows without the hassle of figuring out the position yourself.
+         * Can be used to position the window relatively (to the calling widget) or absolutely (to the view port).
+         *
+         * @memberof Wix
+         * @namespace Wix.WindowPlacement
+         */
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+            return {
+                /**
+                 * Top left placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                TOP_LEFT: 'TOP_LEFT',
+
+                /**
+                 * Top right placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                TOP_RIGHT: 'TOP_RIGHT',
+
+                /**
+                 * Bottom right placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                BOTTOM_RIGHT: 'BOTTOM_RIGHT',
+
+                /**
+                 * Bottom left placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                BOTTOM_LEFT: 'BOTTOM_LEFT',
+
+                /**
+                 * Top center placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                TOP_CENTER: 'TOP_CENTER',
+
+                /**
+                 * Center right placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                CENTER_RIGHT: 'CENTER_RIGHT',
+
+                /**
+                 * Bottom center placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                BOTTOM_CENTER: 'BOTTOM_CENTER',
+
+                /**
+                 * Center left placement.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 */
+                CENTER_LEFT: 'CENTER_LEFT',
+
+                /**
+                 * (FIXED origin only) center of the screen.
+                 * @memberof Wix.WindowPlacement
+                 * @since 1.17.0
+                 * @deprecated
+                 */
+                CENTER: 'CENTER'
+            };
+        }).call(exports, __webpack_require__, exports, module),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 12 */
+    /*!****************************************************!*\
+     !*** ./js/modules/superApps/privates/sharedAPI.js ***!
+     \****************************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/utils */ 1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (postMessage, reporter, utils) {
+            'use strict';
+
+            var getInstalledInstance = function getInstalledInstance(appDefinitionId, namespace, onSuccess, onFailure) {
+                if (!appDefinitionId || !onSuccess) {
+                    reporter.reportSdkError('Mandatory arguments - appDefinitionId & onSuccess must be specified');
+                    return;
+                }
+                if (!utils.isString(appDefinitionId)) {
+                    reporter.reportSdkError('Invalid argument - appDefinitionId must be a string');
+                    return;
+                }
+                if (!utils.isFunction(onSuccess)) {
+                    reporter.reportSdkError('Invalid argument - onSuccess must be a function');
+                    return;
+                }
+                if (onFailure && !utils.isFunction(onFailure)) {
+                    reporter.reportSdkError('Invalid argument - onFailure must be a function');
+                    return;
+                }
+                var callback = function callback(data) {
+                    if (data.onError) {
+                        if (onFailure) {
+                            onFailure();
+                        }
+                    } else {
+                        onSuccess.apply(this, arguments);
+                    }
+                };
+
+                var args = { appDefinitionId: appDefinitionId };
+                postMessage.sendMessage(postMessage.MessageTypes.GET_INSTALLED_INSTANCE, namespace, args, callback);
+            };
+
+            var refreshCurrentMember = function refreshCurrentMember(namespace) {
+                postMessage.sendMessage(postMessage.MessageTypes.REFRESH_CURRENT_MEMBER, namespace);
+            };
+
+            return {
+                getInstalledInstance: getInstalledInstance,
+                refreshCurrentMember: refreshCurrentMember
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 13 */
+    /*!************************************!*\
+     !*** ./js/modules/WindowOrigin.js ***!
+     \************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * Represents a Wix popup window origin. A window can be positioned where it is origin is the view port (0,0) or
+         * where the origin is another widget (x,y).
+         * @memberof Wix
+         * @namespace Wix.WindowOrigin
+         */
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+            return {
+                /**
+                 * Default position. The popup will be placed inside the browser viewport.
+                 * @see WindowOrigin.FIXED
+                 * @memberof Wix.WindowOrigin
+                 * @since 1.17.0
+                 */
+                DEFAULT: 'FIXED',
+
+                /**
+                 * Fixed position. The popup will be placed inside the browser viewport.
+                 * @memberof Wix.WindowOrigin
+                 * @since 1.17.0
+                 */
+                FIXED: 'FIXED',
+
+                /**
+                 * Relative position. The popup will be placed relative to the opening widget (Not supported for Page).
+                 * @memberof Wix.WindowOrigin
+                 * @since 1.17.0
+                 */
+                RELATIVE: 'RELATIVE',
+
+                /**
+                 * Absolute position. The popup will be placed relative to a given x,y coordinates that their origin is the top-left corner of the widget.
+                 * @memberof Wix.WindowOrigin
+                 * @author mayah@wix.com
+                 * @since 1.28.0
+                 */
+                ABSOLUTE: 'ABSOLUTE'
+            };
+        }).call(exports, __webpack_require__, exports, module),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
     /* 14 */
+    /*!*****************************!*\
+     !*** ./js/modules/Error.js ***!
+     \*****************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * This is the description for the Error namespace.
+         * @memberof Wix
+         * @namespace Wix.Error
+         */
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+            return {
+                /**
+                 * Indicates an unknown error happened on Wix side which could not be recovered. When handling this error, you can try again or prompt the user with an error dialog.
+                 * @memberof Wix.Error
+                 * @since 1.27.0
+                 */
+                WIX_ERROR: 'WIX_ERROR',
+
+                /**
+                 * Indicates the activity could not be found.
+                 * @memberof Wix.Error
+                 * @since 1.27.0
+                 */
+                NOT_FOUND: 'NOT_FOUND',
+
+                /**
+                 * Indicates the dates you provided are in the wrong format or are not valid date ranges.
+                 * @memberof Wix.Error
+                 * @since 1.27.0
+                 */
+                BAD_REQUEST: 'BAD_REQUEST',
+
+                /**
+                 * @memberof Wix.Error
+                 * @since 1.27.0
+                 */
+                INVALID_SCHEMA: 'INVALID_SCHEMA',
+
+                /**
+                 * @memberof Wix.Error
+                 * @since 1.46.0
+                 */
+                FORBIDDEN: 'FORBIDDEN'
+            };
+        }).call(exports, __webpack_require__, exports, module),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 15 */
     /*!*****************************!*\
      !*** ./js/modules/Media.js ***!
      \*****************************/
@@ -3233,7 +3291,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 15 */
+    /* 16 */
     /*!****************************!*\
      !*** ./js/modules/Base.js ***!
      \****************************/
@@ -3248,7 +3306,7 @@
          * This is the description for the Wix namespace.
          * @namespace Wix
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Theme */ 16), __webpack_require__(/*! WindowOrigin */ 11), __webpack_require__(/*! WindowPlacement */ 10), __webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/viewMode */ 4), __webpack_require__(/*! privates/scriptUtils */ 34), __webpack_require__(/*! privates/urlUtils */ 5)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, Theme, WindowOrigin, WindowPlacement, core, reporter, postMessage, sharedAPI, viewMode, scriptUtils, urlUtils) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Theme */ 17), __webpack_require__(/*! WindowOrigin */ 13), __webpack_require__(/*! WindowPlacement */ 11), __webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/viewMode */ 4)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, Theme, WindowOrigin, WindowPlacement, core, reporter, postMessage, sharedAPI, viewMode) {
 
             var namespace = 'Wix';
 
@@ -3757,35 +3815,6 @@
                 core.addToReadyQ(function (styles) {
                     var isEnabled = !!(styles && styles.isVisualFocusEnabled);
                     callback(isEnabled);
-                });
-            };
-
-            var requireSingletonAPI = function requireSingletonAPI(appDefId, componentType, onSuccess, onFailure) {
-                var callback = function callback(apiName) {
-                    if (!apiName) {
-                        if (onFailure) {
-                            onFailure();
-                        }
-                        return;
-                    }
-                    scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
-                        window.pmrpc.api.request(apiName, { target: window.parent }).then(function (api) {
-                            onSuccess(api);
-                        }).catch(function () {
-                            if (onFailure) {
-                                onFailure();
-                            }
-                        });
-                    });
-                };
-                postMessage.sendMessage(postMessage.MessageTypes.REQUIRE_SINGELTON_API, namespace, { appDefId: appDefId, componentType: componentType }, callback);
-            };
-
-            var registerApi = function registerApi(apiObject) {
-                var compId = urlUtils.getQueryParameter("compId");
-                scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
-                    window.pmrpc.api.set('tpa_public_api_' + compId, apiObject);
-                    postMessage.sendMessage(postMessage.MessageTypes.REGISTER_API, namespace);
                 });
             };
 
@@ -4584,44 +4613,13 @@
                  * var ECOM_APP_DEF_ID = '1380b703-ce81-ff05-f115-39571d94dfcd';
                  * Wix.isAppSectionInstalled('product_page', {appDefinitionId: ECOM_APP_DEF_ID}, (isInstalled)=>{});
                  */
-                isAppSectionInstalled: sharedAPI.isAppSectionInstalled.bind(this, namespace),
-
-                /**
-                 * Require an API from another TPA widget
-                 *
-                 * @function
-                 * @memberOf Wix
-                 * @since
-                 * @param {string} widgetId - the TPA widget to require the API from
-                 * @param {string} AppDefId - the TPA AppDefId to require the API from
-                 * @param {string} widgetType - the TPA type to require the API from
-                 * @param {Function} onSuccess - a callback function with an array containing the APIs of all the provided widget components on the page.
-                 * @param {Function} onFailure - a callback function with an error message when the require fails.
-                 * @example
-                 * Wix.requireSingletonAPI(12345-12345-12345,<WIDGET_TYPE>,function(componentsArray) {
-         *  //componentsArray is an array of objects containing "compId", "layout" - the layout of the component, "API" - the api object
-         * }
-                 */
-                requireSingletonAPI: requireSingletonAPI,
-
-                /**
-                 * Register a public API to be used from other TPAs
-                 *
-                 * @function
-                 * @memberOf Wix
-                 * @since
-                 * @param {Object} the api Object to register
-                 * @example
-                 * Wix.registerApi({execute: function(){ ... }})
-                 */
-                registerApi: registerApi
-
+                isAppSectionInstalled: sharedAPI.isAppSectionInstalled.bind(this, namespace)
             };
         }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 16 */
+    /* 17 */
     /*!*****************************!*\
      !*** ./js/modules/Theme.js ***!
      \*****************************/
@@ -4657,7 +4655,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 17 */
+    /* 18 */
     /*!****************************!*\
      !*** ./js/modules/Data.js ***!
      \****************************/
@@ -4672,7 +4670,7 @@
          * @memberof Wix
          * @namespace Wix.Data
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/data */ 18)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, postMessage, reporter, sharedAPI, data) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/data */ 19)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, postMessage, reporter, sharedAPI, data) {
 
             var namespace = 'Data.Public';
 
@@ -4818,7 +4816,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 18 */
+    /* 19 */
     /*!*************************************!*\
      !*** ./js/modules/privates/data.js ***!
      \*************************************/
@@ -4971,7 +4969,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 19 */
+    /* 20 */
     /*!***************************************!*\
      !*** ./js/modules/privates/pubSub.js ***!
      \***************************************/
@@ -5025,7 +5023,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 20 */
+    /* 21 */
     /*!******************************************!*\
      !*** ./js/modules/privates/analytics.js ***!
      \******************************************/
@@ -5165,7 +5163,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 21 */
+    /* 22 */
     /*!********************************************!*\
      !*** ./js/modules/privates/performance.js ***!
      \********************************************/
@@ -5210,19 +5208,405 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 22 */
-    /*!*************************!*\
-     !*** multi ./js/Wix.js ***!
-     \*************************/
+    /* 23 */
+    /*!***********************************************!*\
+     !*** ./js/modules/superApps/privates/core.js ***!
+     \***********************************************/
     /*! dynamic exports provided */
     /*! all exports used */
     /***/ (function(module, exports, __webpack_require__) {
 
-        module.exports = __webpack_require__(/*! ./js/Wix.js */23);
+        "use strict";
+
+
+        var postMessage = __webpack_require__(/*! privates/postMessage */ 0);
+
+        var wixUpgradeUrl;
+
+        var initSettings = function initSettings() {
+            postMessage.sendMessage(postMessage.MessageTypes.GET_WIX_UPGRADE_URL, undefined, null, function (url) {
+                wixUpgradeUrl = url;
+            });
+        };
+
+        var getWixUpgradeUrl = function getWixUpgradeUrl() {
+            return wixUpgradeUrl;
+        };
+
+        module.exports = {
+            initSettings: initSettings,
+            getWixUpgradeUrl: getWixUpgradeUrl
+        };
+
+        /***/ }),
+    /* 24 */
+    /*!********************************************!*\
+     !*** ./js/modules/privates/scriptUtils.js ***!
+     \********************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+
+
+        var scriptsName = {
+            PM_RPC: 'PM_RPC',
+            PROMISE_POLYFILL: 'PROMISE_POLYFILL'
+        };
+
+        var scriptsSrc = {
+            PM_RPC: 'https://unpkg.parastorage.com/pm-rpc@1.0.7/build/pm-rpc.min.js',
+            PROMISE_POLYFILL: 'https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js'
+        };
+
+        var SCRIPT_ID_PREFIX = 'dynamic_script_';
+
+        var loadScript = function loadScript(name, callback) {
+            var existingElement = document.getElementById(SCRIPT_ID_PREFIX + name);
+            if (existingElement) {
+                if (callback) {
+                    callback();
+                }
+                return;
+            }
+            var element = document.createElement('script');
+            element.async = false;
+            element.src = scriptsSrc[name];
+            element.id = SCRIPT_ID_PREFIX + name;
+            element.onload = function () {
+                if (callback) {
+                    callback();
+                }
+            };
+            document.head.appendChild(element);
+        };
+
+        module.exports = {
+            loadScript: loadScript,
+            scriptsName: scriptsName
+        };
+
+        /***/ }),
+    /* 25 */
+    /*!******************************************!*\
+     !*** ./js/modules/superApps/Settings.js ***!
+     \******************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+        /**
+         * A private namespace for the Settings of supperApps.
+         * @memberof Wix
+         * @namespace Wix.Settings
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Settings */ 10), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! superApps/privates/core */ 23), __webpack_require__(/*! superApps/privates/sharedAPI */ 12), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/utils */ 1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Settings, postMessage, superAppsCore, superAppsSharedAPI, sharedAPI, reporter, utils) {
+            'use strict';
+
+            var namespace = 'SuperApps.Settings';
+
+            var openBillingPage = function openBillingPage(referrer) {
+                var options = {};
+                if (utils.isString(referrer)) {
+                    options.referrer = referrer;
+                } else if (utils.isObject(referrer)) {
+                    options = referrer;
+                }
+
+                var args = sharedAPI.validateParamsForOpenBillingPage(Settings.PremiumIntent, options);
+                if (args) {
+                    var wixUpgradeUrl = superAppsCore.getWixUpgradeUrl();
+                    if (wixUpgradeUrl) {
+                        if (args.referrer) {
+                            wixUpgradeUrl = wixUpgradeUrl.replace('referralAdditionalInfo', 'referralAdditionalInfo=' + args.referrer);
+                        }
+                        if (args.premiumIntent) {
+                            wixUpgradeUrl = wixUpgradeUrl.concat('&premiumIntent=' + args.premiumIntent);
+                        }
+                        window.open(wixUpgradeUrl);
+                        postMessage.sendMessage(postMessage.MessageTypes.TRACK_APP_UPGRADE, namespace);
+                    } else {
+                        postMessage.sendMessage(postMessage.MessageTypes.OPEN_BILLING_PAGE, namespace, args);
+                    }
+                }
+            };
+
+            var openMediaDialog = function openMediaDialog(mediaType, multipleSelection, onSuccess, onCancel, options) {
+                sharedAPI.openMediaDialog(postMessage.MessageTypes.OPEN_MEDIA_DIALOG, namespace, this.MediaType, mediaType, multipleSelection, onSuccess, onCancel, options);
+            };
+
+            var openModal = function openModal(url, width, height, title, onClose, bareUI, options) {
+                sharedAPI.openModal(namespace, url, width, height, title, onClose, bareUI, options);
+            };
+
+            var getMediaTypes = function getMediaTypes() {
+                var mediaTypes = cloneObject(Settings.MediaType);
+                mediaTypes.VIDEO = 'video';
+                mediaTypes.SHAPE = 'shape';
+                mediaTypes.MUSIC = 'music';
+                mediaTypes.CLIPART = 'clipart';
+                mediaTypes.BG_VIDEO = 'bg_video';
+                mediaTypes.ICON_DOCUMENT = 'icon_document';
+                mediaTypes.ICON_SOCIAL = 'bg_social';
+                mediaTypes.ICON_FAVICON = 'bg_favicon';
+                mediaTypes.MUSIC_PRO = 'secure_music';
+                mediaTypes.IMAGE_PRO = 'secure_picture';
+                mediaTypes.FLASH = 'swf';
+                mediaTypes.BG_IMAGE = 'backgrounds';
+                return mediaTypes;
+            };
+
+            var cloneObject = function cloneObject(obj) {
+                var clone = {};
+                for (var i in obj) {
+                    if (_typeof(obj[i]) === "object" && obj[i] !== null) {
+                        clone[i] = cloneObject(obj[i]);
+                    } else {
+                        clone[i] = obj[i];
+                    }
+                }
+                return clone;
+            };
+
+            var setHelpArticle = function setHelpArticle(articleId, options) {
+                if (!utils.isString(articleId)) {
+                    reporter.reportSdkError('Mandatory arguments - articleId must be a string');
+                    return;
+                }
+                if (options && !utils.isObject(options)) {
+                    reporter.reportSdkError('Invalid argument - options must be of type object');
+                    return;
+                }
+                if (options && options.type && options.type !== 'SETTINGS' && options.type !== 'MODAL') {
+                    reporter.reportSdkError("Invalid argument - type can only be 'SETTINGS' or 'MODAL'");
+                    return;
+                }
+
+                var args = {
+                    articleId: articleId,
+                    type: options && options.type
+                };
+                postMessage.sendMessage(postMessage.MessageTypes.SET_HELP_ARTICLE, namespace, args);
+            };
+
+            var getInstalledInstance = function getInstalledInstance(appDefinitionId, onSuccess, onFailure) {
+                superAppsSharedAPI.getInstalledInstance(appDefinitionId, namespace, onSuccess, onFailure, namespace);
+            };
+
+            var addApplication = function addApplication(appDefinitionId, options, onSuccess, onError) {
+                sharedAPI.addApplication(namespace, appDefinitionId, options, onSuccess, onError);
+            };
+
+            var addComponent = function addComponent(options, onSuccess, onError) {
+                sharedAPI.addComponent(namespace, options, onSuccess, onError);
+            };
+
+            return {
+                /**
+                 * @enum
+                 * @memberof Wix.Settings
+                 * @since 1.40.0
+                 */
+                MediaType: getMediaTypes(),
+                /**
+                 * The Wix.Setting.openBillingPage method enables the app to offer a premium package from within the app settings.
+                 * If a bundle package exists for the app, the Wix Premium package picker will be opened in a new tab.
+                 * Otherwise, it will open the Wix billing system page in a modal window.
+                 * @function
+                 * @memberof Wix.Settings
+                 * @since 1.78.0
+                 * @param {Object} options may contain: a 'premiumIntent' property with possible values: Wix.Settings.PremiumIntent. When used, premiumIntent will be added to the premium url
+                 *                                      a 'referrer' property - when used, a "referralAdditionalInfo" will be added to the premium url.
+                 * @example
+                 *
+                 * Wix.Settings.openBillingPage({referrer: 'referrer', premiumIntent: Wix.Settings.PremiumIntent.FREE});
+                 */
+                openBillingPage: openBillingPage,
+
+                /**
+                 * The getInstalledInstance method will call the onSuccess callback
+                 * if the app is installed in the site, otherwise it will call the onFailure callback.
+                 * The onSuccess callback will be called with an object containing the app instanceId.
+                 * @function
+                 * @memberof Wix.Settings
+                 * @since 1.50.0
+                 * @param {String} appDefinitionId - the appDefinition Id of the app
+                 * @param {Function} onSuccess - callback to be called with the app info if the app is installed in the site
+                 * @param {Function} [onFailure] - callback to be called if the app is not installed in the site
+                 *
+                 * @example
+                 *
+                 * Wix.Utils.getInstalledInstance('appDefinitionId', onSuccess, onFailure);
+                 *
+                 * in case the app is installed the onSuccess callback will be called with object like:
+                 * {
+         *      instanceId: "13cc8929-93a3-45fb-0e68-bb04489f4e8d"
+         * }
+                 *
+                 * else, if the app is not installed the onFailure callback will be called without any data
+                 */
+                getInstalledInstance: getInstalledInstance,
+
+                /**
+                 * This method opens the Wix media dialog inside the WIx Editor, and let's the site owner choose a an existing file from the Wix media galleries,
+                 * or upload a new file instead. When completed a callback function returns the meta data of the selected item/s.
+                 * This method returns the full meta data descriptor for a selected media item. To access the media item from your code you will need to construct a
+                 * full URL using that descriptor. Since the media items URLs format is set by Wix and might changed in the future,
+                 * we are requiring that the URL construction will be done using the SDK. Use one of the Wix.Utils.Media.get* methods to get the desired media item URL.
+                 * @function
+                 * @memberof Wix.Settings
+                 * @since 1.61.0
+                 * @param {Wix.Settings.MediaType} mediaType Media gallery to choose from - image, background, audio, swf and secure music.
+                 * @param {Boolean} multiSelect selection mode, single (false) or multiple (true) item to choose from.
+                 * @param {Function} onSuccess callback function, passing the media item/s meta data.
+                 * @param {Function} [onCancel] callback function called when user cancels.
+                 * @return This is an asynchronous function, the returned value is passed in the onSuccess callback function.
+                 * An object (single selection) or Array of objects (multiple selection). The object describes the meta data of the selected media item.
+                 *
+                 * @example
+                 *
+                 * Wix.Settings.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function(data) {
+         *    // save image data
+         * });
+                 */
+                openMediaDialog: openMediaDialog,
+
+                /**
+                 * @function
+                 * @memberof Wix.Settings
+                 * @since 1.64.0
+                 * @param {String} url Model iframe url.
+                 * @param {Number} width The modal window width (can be a string for percent, i.e., '90%', or an integer for pixels, i.e., 90).
+                 * @param {Number} height The modal window height (can be a string for percent, i.e., '90%', or an integer for pixels, i.e., 90).
+                 * @param {String} [title] Title of the modal.
+                 * @param {Function} [onClose] onClose callback function.
+                 * @param {Boolean} [bareUI] Opens the modal in a bare mode without the modal title, help and close buttons.
+                 * @param {Object} [options]
+                 * @example
+                 * Wix.Settings.openModal('http://www.example.com', '100%','100%', 'title', _.noop, true, {
+         *          margin: false,
+         *          overlay: 'rgba(0,0,0,0)',
+         *          background: 'rgba(0,0,0,0)'
+         *      });
+                 */
+                openModal: openModal,
+
+                /**
+                 * Allow apps to change their settings panel/modal help button based on their context.
+                 * @function
+                 * @memberof Wix.Settings
+                 * @since 1.66.0
+                 * @param {String} articleID id of the help article (required).
+                 * @param {Object} options object that can contain a 'type' property with the value 'SETTINGS' or 'MODAL' (if not passed, default is 'SETTINGS').
+                 * @example
+                 * Wix.Settings.setHelpArticle('pa423jhc', {
+         *          type: 'MODAL'
+         *     });
+                 */
+                setHelpArticle: setHelpArticle,
+
+                /**
+                 * Adds the selected application to the site if it's not already installed.
+                 * If the application is not published it will only be added if "&appDefinitionId=[APP_DEF_ID]" is added to the site url
+                 *
+                 * @function
+                 * @memberOf Wix.Settings
+                 * @since 1.83.0
+                 * @param {string} appDefinitionId the id of the app to be installed
+                 * @param {object} [options] can contain pageId (string) and shouldNavigate (boolean) properties
+                 * @param {function} [onSuccess] called after the app was installed successfully
+                 *   callback signature: function() {}
+                 * @param {function} [onError] called if there was an error during installation with the error
+                 * @example
+                 *
+                 * Wix.Settings.addApplication(
+                 *          '1380b703-ce81-ff05-f115-39571d94dfcd',
+                 *          {pageId: 'c1dmp', shouldNavigate: true},
+                 *          function(){console.log('app was installed successfully')},
+                 *          function(data){console.log(data.error)}
+                 * );
+                 */
+                addApplication: addApplication,
+
+                /**
+                 * Add a new component to the site. Component will be added with it's default style unless the 'copyStyle' property is true and then the style would be copied from the current component.
+                 * if the styleId property is also passed, the style will be according to it.
+                 * Once the component is added, the user would be directed to the page where the component was added.
+                 * @function
+                 * @memberof Wix.Settings
+                 * @author lior.shefer@wix.com
+                 * @since 1.89.0
+                 * @experimental
+                 * @param {Object} options Options for this function: appDefinitionId(string),  componentType (required), copyStyle (boolean), styleId (string), widget (object), page (object), appDefinitionId (string)
+                 * @param {Function} onSuccess  Receives the component compId
+                 * @param {Function} onError  Receives the error if the operation failed
+                 * @example
+                 *
+                 * // create a new page from a pageId. User is prompted for page name, compId is returned in callback
+                 * Wix.Settings.addComponent({
+        *      componentType : 'PAGE',
+        *      page : {
+        *          pageId : 'product-catalog',
+        *      }
+         * }, function(compId) {
+        *      console.log(compId);
+         * });
+                 */
+                addComponent: addComponent
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 26 */
+    /*!********************************!*\
+     !*** multi ./js/WixPrivate.js ***!
+     \********************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        module.exports = __webpack_require__(/*! ./js/WixPrivate.js */27);
 
 
         /***/ }),
-    /* 23 */
+    /* 27 */
+    /*!**************************!*\
+     !*** ./js/WixPrivate.js ***!
+     \**************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+//TODO - dependency order init our core module - need to clean this up
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! ./Wix */ 28), __webpack_require__(/*! SuperApps */ 47), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/scriptUtils */ 24)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Wix, SuperApps, utils, scriptUtils) {
+            "use strict";
+
+            if (!window.Promise) {
+                scriptUtils.loadScript(scriptUtils.scriptsName.PROMISE_POLYFILL);
+            }
+
+            var getNamespaceToExport = function getNamespaceToExport() {
+                Wix.SuperApps = SuperApps;
+                utils.merge(Wix, SuperApps);
+                return Wix;
+            };
+
+            return getNamespaceToExport();
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 28 */
     /*!***************************!*\
      !*** ./js/Wix.js-exposed ***!
      \***************************/
@@ -5233,11 +5617,11 @@
         "use strict";
         /* WEBPACK VAR INJECTION */(function(global) {
 
-            module.exports = global["Wix"] = __webpack_require__(/*! -!./node_modules/jshint-loader!./Wix.js */ 25);
-            /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../node_modules/webpack/buildin/global.js */ 24)))
+            module.exports = global["Wix"] = __webpack_require__(/*! -!./node_modules/jshint-loader!./Wix.js */ 30);
+            /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../node_modules/webpack/buildin/global.js */ 29)))
 
         /***/ }),
-    /* 24 */
+    /* 29 */
     /*!***********************************!*\
      !*** (webpack)/buildin/global.js ***!
      \***********************************/
@@ -5269,7 +5653,7 @@
 
 
         /***/ }),
-    /* 25 */
+    /* 30 */
     /*!************************************************!*\
      !*** ./node_modules/jshint-loader!./js/Wix.js ***!
      \************************************************/
@@ -5277,9 +5661,9 @@
     /*! all exports used */
     /***/ (function(module, exports, __webpack_require__) {
 
-        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! Base */ 15), __webpack_require__(/*! Billing */ 27), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Activities */ 29), __webpack_require__(/*! Settings */ 13),
-            __webpack_require__(/*! Contacts */ 30), __webpack_require__(/*! Utils */ 31), __webpack_require__(/*! Styles */ 32), __webpack_require__(/*! Editor */ 33), __webpack_require__(/*! Events */ 7), __webpack_require__(/*! Error */ 12), __webpack_require__(/*! Media */ 14), __webpack_require__(/*! WindowOrigin */ 11),
-            __webpack_require__(/*! WindowPlacement */ 10), __webpack_require__(/*! Worker */ 35), __webpack_require__(/*! PubSub */ 36), __webpack_require__(/*! Preview */ 37), __webpack_require__(/*! Dashboard */ 38), __webpack_require__(/*! Theme */ 16), __webpack_require__(/*! Features */ 39), __webpack_require__(/*! privates/urlUtils */ 5), __webpack_require__(/*! Data */ 17), __webpack_require__(/*! Analytics */ 40), __webpack_require__(/*! Performance */ 41), __webpack_require__(/*! Apps */ 42)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (core, Base, Billing, utils, Activities, Settings,
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! Base */ 16), __webpack_require__(/*! Billing */ 32), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! Activities */ 34), __webpack_require__(/*! Settings */ 10),
+            __webpack_require__(/*! Contacts */ 35), __webpack_require__(/*! Utils */ 36), __webpack_require__(/*! Styles */ 37), __webpack_require__(/*! Editor */ 38), __webpack_require__(/*! Events */ 7), __webpack_require__(/*! Error */ 14), __webpack_require__(/*! Media */ 15), __webpack_require__(/*! WindowOrigin */ 13),
+            __webpack_require__(/*! WindowPlacement */ 11), __webpack_require__(/*! Worker */ 39), __webpack_require__(/*! PubSub */ 40), __webpack_require__(/*! Preview */ 41), __webpack_require__(/*! Dashboard */ 42), __webpack_require__(/*! Theme */ 17), __webpack_require__(/*! Features */ 43), __webpack_require__(/*! privates/urlUtils */ 5), __webpack_require__(/*! Data */ 18), __webpack_require__(/*! Analytics */ 44), __webpack_require__(/*! Performance */ 45), __webpack_require__(/*! Apps */ 46)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (core, Base, Billing, utils, Activities, Settings,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Contacts, Utils, Styles, Editor, Events, Error, Media, WindowOrigin,
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         WindowPlacement, Worker, PubSub, Preview, Dashboard, Theme, Features, urlUtils, Data, Analytics, Performance, Apps) {
 
@@ -5356,10 +5740,7 @@
                     getAdsOnPage: Base.getAdsOnPage,
                     isApplicationInstalled: Base.isApplicationInstalled,
                     isAppSectionInstalled: Base.isAppSectionInstalled,
-                    isVisualFocusEnabled: Base.isVisualFocusEnabled,
-                    requireSingletonAPI: Base.requireSingletonAPI,
-                    registerApi: Base.registerApi
-
+                    isVisualFocusEnabled: Base.isVisualFocusEnabled
                 };
             };
 
@@ -5370,7 +5751,7 @@
 
 
         /***/ }),
-    /* 26 */
+    /* 31 */
     /*!**********************************************!*\
      !*** ./js/modules/privates/templateUtils.js ***!
      \**********************************************/
@@ -5637,7 +6018,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 27 */
+    /* 32 */
     /*!*******************************!*\
      !*** ./js/modules/Billing.js ***!
      \*******************************/
@@ -5884,7 +6265,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 28 */
+    /* 33 */
     /*!*************************************!*\
      !*** ./js/modules/WixDataCursor.js ***!
      \*************************************/
@@ -6031,7 +6412,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 29 */
+    /* 34 */
     /*!**********************************!*\
      !*** ./js/modules/Activities.js ***!
      \**********************************/
@@ -6445,7 +6826,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 30 */
+    /* 35 */
     /*!********************************!*\
      !*** ./js/modules/Contacts.js ***!
      \********************************/
@@ -6608,7 +6989,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 31 */
+    /* 36 */
     /*!*****************************!*\
      !*** ./js/modules/Utils.js ***!
      \*****************************/
@@ -6624,7 +7005,7 @@
          * @memberof Wix
          * @namespace Wix.Utils
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! Media */ 14), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/urlUtils */ 5), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (core, Media, utils, reporter, urlUtils, postMessage, sharedAPI) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/core */ 6), __webpack_require__(/*! Media */ 15), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/urlUtils */ 5), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (core, Media, utils, reporter, urlUtils, postMessage, sharedAPI) {
 
             var namespace = 'Utils';
 
@@ -7003,7 +7384,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 32 */
+    /* 37 */
     /*!******************************!*\
      !*** ./js/modules/Styles.js ***!
      \******************************/
@@ -7488,7 +7869,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 33 */
+    /* 38 */
     /*!******************************!*\
      !*** ./js/modules/Editor.js ***!
      \******************************/
@@ -7536,56 +7917,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 34 */
-    /*!********************************************!*\
-     !*** ./js/modules/privates/scriptUtils.js ***!
-     \********************************************/
-    /*! dynamic exports provided */
-    /*! all exports used */
-    /***/ (function(module, exports, __webpack_require__) {
-
-        "use strict";
-
-
-        var scriptsName = {
-            PM_RPC: 'PM_RPC',
-            PROMISE_POLYFILL: 'PROMISE_POLYFILL'
-        };
-
-        var scriptsSrc = {
-            PM_RPC: 'https://unpkg.parastorage.com/pm-rpc@1.0.7/build/pm-rpc.min.js',
-            PROMISE_POLYFILL: 'https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js'
-        };
-
-        var SCRIPT_ID_PREFIX = 'dynamic_script_';
-
-        var loadScript = function loadScript(name, callback) {
-            var existingElement = document.getElementById(SCRIPT_ID_PREFIX + name);
-            if (existingElement) {
-                if (callback) {
-                    callback();
-                }
-                return;
-            }
-            var element = document.createElement('script');
-            element.async = false;
-            element.src = scriptsSrc[name];
-            element.id = SCRIPT_ID_PREFIX + name;
-            element.onload = function () {
-                if (callback) {
-                    callback();
-                }
-            };
-            document.head.appendChild(element);
-        };
-
-        module.exports = {
-            loadScript: loadScript,
-            scriptsName: scriptsName
-        };
-
-        /***/ }),
-    /* 35 */
+    /* 39 */
     /*!******************************!*\
      !*** ./js/modules/Worker.js ***!
      \******************************/
@@ -7601,7 +7933,7 @@
          * @memberof Wix
          * @namespace Wix.Worker
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Data */ 17), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/pubSub */ 19), __webpack_require__(/*! privates/data */ 18), __webpack_require__(/*! privates/analytics */ 20), __webpack_require__(/*! privates/performance */ 21)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Data, sharedAPI, postMessage, pubSub, data, analytics, performance) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Data */ 18), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/pubSub */ 20), __webpack_require__(/*! privates/data */ 19), __webpack_require__(/*! privates/analytics */ 21), __webpack_require__(/*! privates/performance */ 22)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Data, sharedAPI, postMessage, pubSub, data, analytics, performance) {
 
             var namespace = 'Worker';
 
@@ -7965,7 +8297,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 36 */
+    /* 40 */
     /*!******************************!*\
      !*** ./js/modules/PubSub.js ***!
      \******************************/
@@ -7981,7 +8313,7 @@
          * @memberof Wix
          * @namespace Wix.PubSub
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/pubSub */ 19)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (pubSub) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/pubSub */ 20)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (pubSub) {
 
             var namespace = 'PubSub';
 
@@ -8057,7 +8389,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 37 */
+    /* 41 */
     /*!*******************************!*\
      !*** ./js/modules/Preview.js ***!
      \*******************************/
@@ -8104,7 +8436,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 38 */
+    /* 42 */
     /*!*********************************!*\
      !*** ./js/modules/Dashboard.js ***!
      \*********************************/
@@ -8119,7 +8451,7 @@
          * @memberof Wix
          * @namespace Wix.Dashboard
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Base */ 15), __webpack_require__(/*! Settings */ 13), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/utils */ 1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Base, Settings, reporter, postMessage, sharedAPI, utils) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! Base */ 16), __webpack_require__(/*! Settings */ 10), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/utils */ 1)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Base, Settings, reporter, postMessage, sharedAPI, utils) {
 
             var namespace = 'Dashboard';
 
@@ -8465,7 +8797,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 39 */
+    /* 43 */
     /*!********************************!*\
      !*** ./js/modules/Features.js ***!
      \********************************/
@@ -8569,7 +8901,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 40 */
+    /* 44 */
     /*!*********************************!*\
      !*** ./js/modules/Analytics.js ***!
      \*********************************/
@@ -8585,7 +8917,7 @@
          * @memberof Wix
          * @namespace Analytics
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/viewMode */ 4), __webpack_require__(/*! privates/analytics */ 20)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, reporter, postMessage, viewMode, analytics) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/viewMode */ 4), __webpack_require__(/*! privates/analytics */ 21)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, reporter, postMessage, viewMode, analytics) {
 
             var namespace = 'Analytics';
 
@@ -8710,7 +9042,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 41 */
+    /* 45 */
     /*!***********************************!*\
      !*** ./js/modules/Performance.js ***!
      \***********************************/
@@ -8726,7 +9058,7 @@
          * @memberof Wix
          * @namespace Wix.Performance
          */
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/performance */ 21)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (performance) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/performance */ 22)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (performance) {
 
             var namespace = 'Performance';
 
@@ -8772,7 +9104,7 @@
         __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ }),
-    /* 42 */
+    /* 46 */
     /*!****************************!*\
      !*** ./js/modules/Apps.js ***!
      \****************************/
@@ -8807,6 +9139,773 @@
                 WIDGET: 'Widget'
             }
         };
+
+        /***/ }),
+    /* 47 */
+    /*!*********************************!*\
+     !*** ./js/modules/SuperApps.js ***!
+     \*********************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! superApps/Settings */ 25), __webpack_require__(/*! superApps/privates/core */ 23), __webpack_require__(/*! superApps/Base */ 48), __webpack_require__(/*! superApps/Dashboard */ 49), __webpack_require__(/*! superApps/OnBoarding */ 54), __webpack_require__(/*! superApps/Billing */ 50), __webpack_require__(/*! superApps/Mobile */ 51), __webpack_require__(/*! superApps/Editor */ 52), __webpack_require__(/*! superApps/Worker */ 53)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (Settings, core, Base, Dashboard, OnBoarding, Billing, Mobile, Editor, Worker) {
+            'use strict';
+
+            core.initSettings();
+
+            return {
+                Settings: Settings,
+                Dashboard: Dashboard,
+                OnBoarding: OnBoarding,
+                Billing: Billing,
+                Mobile: Mobile,
+                Editor: Editor,
+                Worker: Worker,
+                getInstalledInstance: Base.getInstalledInstance,
+                getCtToken: Base.getCtToken,
+                getPublicAPI: Base.getPublicAPI,
+                refreshCurrentMember: Base.refreshCurrentMember,
+                requireSingletonAPI: Base.requireSingletonAPI,
+                registerApi: Base.registerApi,
+                fireEvent: Base.fireEvent
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 48 */
+    /*!**************************************!*\
+     !*** ./js/modules/superApps/Base.js ***!
+     \**************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * This is the description for the Wix namespace for superApps.
+         * @namespace Wix
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! superApps/privates/sharedAPI */ 12), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/viewMode */ 4), __webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/scriptUtils */ 24), __webpack_require__(/*! privates/urlUtils */ 5)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (sharedAPI, superAppsSharedAPI, reporter, viewMode, postMessage, utils, scriptUtils, urlUtils) {
+            'use strict';
+
+            var namespace = 'SuperApps';
+
+            var getInstalledInstance = function getInstalledInstance(appDefinitionId, onSuccess, onFailure) {
+                if (viewMode.getViewMode() === 'site') {
+                    reporter.reportSdkError('Invalid view mode. This function cannot be called in site mode. Supported view modes are: [editor, preview]');
+                } else {
+                    superAppsSharedAPI.getInstalledInstance(appDefinitionId, namespace, onSuccess, onFailure);
+                }
+            };
+
+            var getCtToken = function getCtToken(onSuccess) {
+                if (!utils.isFunction(onSuccess)) {
+                    reporter.reportSdkError('Mandatory argument - onSuccess function must be specified');
+                    return;
+                }
+                postMessage.sendMessage(postMessage.MessageTypes.GET_CT_TOKEN, namespace, undefined, onSuccess);
+            };
+
+            var refreshCurrentMember = function refreshCurrentMember() {
+                superAppsSharedAPI.refreshCurrentMember(namespace);
+            };
+
+            var getPublicAPI = function getPublicAPI(options, onSuccess, onFailure) {
+                if (!utils.isObject(options)) {
+                    reporter.reportSdkError('Mandatory argument - options must be specified');
+                    return;
+                }
+                if (!utils.isString(options.appDefinitionId)) {
+                    reporter.reportSdkError('Mandatory argument - options.appDefinitionId must be specified');
+                    return;
+                }
+                if (!utils.isFunction(onSuccess)) {
+                    reporter.reportSdkError('Mandatory argument - onSuccess function must be specified');
+                    return;
+                }
+                if (viewMode.getViewMode() === "editor") {
+                    reporter.reportSdkError('Invalid view mode. This function cannot be called in editor mode. Supported view modes are: [preview, site]');
+                    return;
+                }
+                var callback = function callback(data) {
+                    if (data.error) {
+                        if (onFailure) {
+                            onFailure('Error - getPublicAPI of ' + options.appDefinitionId + ' appDefinitionId does not exist or app did not expose a public api');
+                        }
+                    } else {
+                        requestAPI();
+                    }
+                };
+
+                var requestAPI = function requestAPI() {
+                    sharedAPI.getCurrentPageId(namespace, function (currentPageId) {
+                        window.pmrpc.api.request('viewer_platform_public_api_' + options.appDefinitionId + '_' + currentPageId, { target: window.parent }).then(function (api) {
+                            onSuccess(api);
+                        }).catch(function () {
+                            if (onFailure) {
+                                onFailure('Error - getPublicAPI of ' + options.appDefinitionId + ' appDefinitionId does not exist or app did not expose a public api');
+                            }
+                        });
+                    });
+                };
+
+                scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
+                    postMessage.sendMessage(postMessage.MessageTypes.WAIT_FOR_WORKER_TO_BE_READY, namespace, null, callback);
+                });
+            };
+
+            var requireSingletonAPI = function requireSingletonAPI(appDefId, componentType, onSuccess, onFailure) {
+                if (viewMode.getViewMode() === "editor") {
+                    reporter.reportSdkError('Invalid view mode. This function cannot be called in editor mode. Supported view modes are: [preview, site]');
+                    return;
+                }
+
+                var callback = function callback(apiName) {
+                    console.log(apiName);
+                    if (!apiName) {
+                        if (onFailure) {
+                            onFailure();
+                        }
+                        return;
+                    }
+                    scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
+                        window.pmrpc.api.request(apiName, { target: window.parent }).then(function (api) {
+                            onSuccess(api);
+                        }).catch(function (e) {
+                            if (onFailure) {
+                                onFailure();
+                            }
+                        });
+                    });
+                };
+                postMessage.sendMessage(postMessage.MessageTypes.REQUIRE_SINGELTON_API, namespace, { appDefId: appDefId, componentType: componentType }, callback);
+            };
+
+            var registerApi = function registerApi(apiObject, eventsArray) {
+                if (viewMode.getViewMode() === "editor") {
+                    reporter.reportSdkError('Invalid view mode. This function cannot be called in editor mode. Supported view modes are: [preview, site]');
+                    return;
+                }
+                var compId = urlUtils.getQueryParameter("compId");
+                scriptUtils.loadScript(scriptUtils.scriptsName.PM_RPC, function () {
+                    window.pmrpc.api.set('tpa_public_api_' + compId, apiObject);
+                    postMessage.sendMessage(postMessage.MessageTypes.REGISTER_API, namespace, { eventsArray: eventsArray });
+                });
+            };
+
+            var fireEvent = function fireEvent(eventName, eventPayload) {
+                if (!utils.isString(eventName)) {
+                    reporter.reportSdkError('Mandatory argument - eventName must be specified');
+                    return;
+                }
+                if (viewMode.getViewMode() === "editor") {
+                    reporter.reportSdkError('Invalid view mode. This function cannot be called in editor mode. Supported view modes are: [preview, site]');
+                    return;
+                }
+                postMessage.sendMessage(postMessage.MessageTypes.FIRE_EVENT, namespace, { eventName: eventName, eventPayload: eventPayload });
+            };
+
+            return {
+                /**
+                 * The getInstalledInstance method will call the onSuccess callback
+                 * if the app is installed in the site, otherwise it will call the onFailure callback.
+                 * The onSuccess callback will be called with an object containing the app instanceId.
+                 *
+                 * Available in editor and preview view modes only.
+                 * @function
+                 * @memberof Wix
+                 * @since 1.50.0
+                 * @param {String} appDefinitionId - the appDefinition Id of the app
+                 * @param {Function} onSuccess - callback to be called with the app info if the app is installed in the site
+                 * @param {Function} [onFailure] - callback to be called if the app is not installed in the site
+                 *
+                 * @example
+                 *
+                 * Wix.getInstalledInstance('appDefinitionId', onSuccess, onFailure);
+                 *
+                 * in case the app is installed the onSuccess callback will be called with object like:
+                 * {
+        *      instanceId: "13cc8929-93a3-45fb-0e68-bb04489f4e8d"
+        * }
+                 *
+                 * else, if the app is not installed the onFailure callback will be called without any data
+                 */
+                getInstalledInstance: getInstalledInstance,
+
+                /**
+                 * The getCtToken method will call the onSuccess callback with the ctToken .
+                 *
+                 * Available in editor, preview view modes.
+                 * @function
+                 * @memberof Wix
+                 * @since 1.68.0
+                 * @param {Function} onSuccess - callback to be called with the ctToken
+                 *
+                 * @example
+                 *
+                 * Wix.getCtToken(onSuccess);
+                 */
+                getCtToken: getCtToken,
+
+                /**
+                 * This method is part of Wix Site Members feature. It allows the site to refresh the member details if they were updated somehow externally.
+                 * @function
+                 * @memberof Wix
+                 * @since 1.90.0
+                 * @example
+                 *
+                 * Wix.refreshCurrentMember();
+                 */
+                refreshCurrentMember: refreshCurrentMember,
+
+                /**
+                 * Returns the platform application public api
+                 *
+                 * Available in viewer, preview view modes.
+                 * @function
+                 * @memberof Wix
+                 * @since 1.90.0
+                 * @param {Object} options - can contain 'appDefinitionId' property (string)
+                 * @param {Function} onSuccess - callback to be called with the returned functions
+                 * @param {Function} [onFailure] - callback to be called on error
+                 *
+                 * @example
+                 *
+                 * Wix.getPublicAPI('appDefinitionId', onSuccess, onFailure);
+                 */
+                getPublicAPI: getPublicAPI,
+
+                /**
+                 * Require an API from another TPA widget
+                 *
+                 * @function
+                 * @memberOf Wix
+                 * @since
+                 * @param {string} AppDefId - the TPA AppDefId to require the API from
+                 * @param {string} widgetType - the TPA type to require the API from
+                 * @param {Function} onSuccess - a callback function with an api object containing the API functions.
+                 * @param {Function} onFailure - a callback function when the require failed.
+                 * @example
+                 * Wix.requireSingletonAPI(Wix.Apps.ECOM, Wix.Apps.Type.PAGE, function (api) {
+         *   //use api
+         * }, function() {
+         *  console.log("error")
+         * });
+                 *
+                 */
+                requireSingletonAPI: requireSingletonAPI,
+
+                /**
+                 * Register a public API and public events to be used from other TPAs
+                 *
+                 * @function
+                 * @memberOf Wix
+                 * @since
+                 * @param {Object} the api Object to register
+                 * @param {Array} Array of eventNames for other TPA to subscribe to. Fire the events with Wix.fireEvents.
+                 * @example
+                 *  Wix.registerApi({ open: function() { ... }, close: function() { ... } } ,['onOpen', 'onClose']);
+                 */
+                registerApi: registerApi,
+
+                /**
+                 * fire an event that was registered in registerApi
+                 *
+                 * @function
+                 * @memberOf Wix
+                 * @since
+                 * @param {String} the event name to fire
+                 * @param {Any} event payload
+                 * @example
+                 *   Wix.fireEvent('onClose', {a: 1, b: 2 });
+                 */
+                fireEvent: fireEvent
+
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 49 */
+    /*!*******************************************!*\
+     !*** ./js/modules/superApps/Dashboard.js ***!
+     \*******************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * A private namespace for the Dashboard of supperApps.
+         * @memberof Wix
+         * @namespace Wix.Dashboard
+         */
+
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/postMessage */ 0), __webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! superApps/Settings */ 25)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (postMessage, utils, reporter, sharedAPI, superAppsSettings) {
+            'use strict';
+
+            var namespace = 'SuperApps.Dashboard';
+
+            var showHeader = function showHeader() {
+                postMessage.sendMessage(postMessage.MessageTypes.SHOW_DASHBOARD_HEADER, namespace);
+            };
+
+            var hideHeader = function hideHeader() {
+                postMessage.sendMessage(postMessage.MessageTypes.HIDE_DASHBOARD_HEADER, namespace);
+            };
+
+            var setHelpArticle = function setHelpArticle(articleId) {
+                if (!utils.isString(articleId)) {
+                    reporter.reportSdkError('Mandatory arguments - articleId must be a string');
+                    return;
+                }
+
+                var args = {
+                    articleId: articleId
+                };
+                postMessage.sendMessage(postMessage.MessageTypes.SET_HELP_ARTICLE, namespace, args);
+            };
+
+            var getProducts = function getProducts(options, onSuccess, onError) {
+                if (utils.isObject(options)) {
+                    sharedAPI.getProducts(namespace, options, onSuccess, onError);
+                } else if (utils.isFunction(options)) {
+                    sharedAPI.getProducts(namespace, {}, options, onSuccess);
+                } else {
+                    reporter.reportSdkError('Invalid argument - options must be an object');
+                }
+            };
+
+            var openMediaDialog = function openMediaDialog(mediaType, multipleSelection, onSuccess, onCancel, options) {
+                sharedAPI.openMediaDialog(postMessage.MessageTypes.SUPER_APPS_OPEN_MEDIA_DIALOG, namespace, superAppsSettings.MediaType, mediaType, multipleSelection, onSuccess, onCancel, options);
+            };
+
+            return {
+                /**
+                 * The Wix.Dashboard.showHeader should be used by super-apps to hide the top my-account header whenever in creation mode such as creating a new shoutout, new album editing a wix-touch application. Going back from editing mode, the super-app must call showHeader again.
+                 * @function
+                 * @memberof Wix.Dashboard
+                 * @since 1.62.0
+                 * @example
+                 *
+                 * Wix.Dashboard.showHeader();
+                 */
+                showHeader: showHeader,
+
+                /**
+                 * The Wix.Dashboard.hideHeader should be used by super-apps when going back from editing mode to show the my-account header again. The my account header let the user go back to the dashboard, switch apps and view their notifications, so it must be shown again.
+                 * @function
+                 * @memberof Wix.Dashboard
+                 * @since 1.62.0
+                 * @example
+                 *
+                 * Wix.Dashboard.hideHeader();
+                 */
+                hideHeader: hideHeader,
+
+                /**
+                 * Allow apps to change their  help button based on their context.
+                 *
+                 * @since 1.69.0
+                 * @memberof Wix.Dashboard
+                 * @param {String} articleID id of the help article (required).
+                 * @example
+                 * Wix.Dashboard.setHelpArticle('pa423jhc');
+                 */
+                setHelpArticle: setHelpArticle,
+
+                /**
+                 * Returns an Array of objects containing product and pricing info.
+                 * @function
+                 * @memberof Wix.Dashboard
+                 * @since 1.71.0
+                 * @param {Object} options An object that can contain 'appDefinitionId' of the app to get the packages for
+                 * @param {Function} onSuccess A callback function to receive the products.
+                 * @param {Function} [onError] A callback error function.
+                 *
+                 * @example
+                 * var onError = function () {
+         *  //handle the error
+         * };
+                 * var onSuccess = function (data) {
+         *  //handle onSuccess
+         *  //sample data schema:
+         *  [{
+         *     "id": <vendorProductId>,
+         *     "name": "App Premium Package",
+         *     "price": "4.95",
+         *     "is_active": true,
+         *     "freeMonth": true,
+         *     "currencyCode": "USD",
+         *     "currencySymbol": "US$"
+         *     "monthly": {
+         *          "price": "4.95",
+         *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=MONTHLY&vendorProductId=1234"
+         *     },
+         *     "yearly:: {
+         *          "price": "3.97",
+         *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=YEARLY&vendorProductId=1234"
+         *     },
+         *     "oneTime": {
+         *          "price": "5.99",
+         *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=ONE_TIME&vendorProductId=1234"
+         *     },
+         *     "bestSellingFeature": "",
+         *      "discountPercent": 20
+         *     ]
+         *  }]
+         *
+         * };
+                 * Wix.Dashboard.getProducts(options, onSuccess, onError);
+                 */
+                getProducts: getProducts,
+
+                /**
+                 * This method opens the Wix media dialog inside the WIx Editor, and let's the site owner choose a an existing file from the Wix media galleries,
+                 * or upload a new file instead. When completed a callback function returns the meta data of the selected item/s.
+                 * This method returns the full meta data descriptor for a selected media item. To access the media item from your code you will need to construct a
+                 * full URL using that descriptor. Since the media items URLs format is set by Wix and might changed in the future,
+                 * we are requiring that the URL construction will be done using the SDK. Use one of the Wix.Utils.Media.get* methods to get the desired media item URL.
+                 * @function
+                 * @memberof Wix.Dashboard
+                 * @since 1.72.0
+                 * @param {Wix.Settings.MediaType} mediaType Media gallery to choose from - image, background, audio, swf and secure music.
+                 * @param {Boolean} multiSelect selection mode, single (false) or multiple (true) item to choose from.
+                 * @param {Function} onSuccess callback function, passing the media item/s meta data.
+                 * @param {Function} [onCancel] callback function called when user cancels.
+                 * @return This is an asynchronous function, the returned value is passed in the onSuccess callback function.
+                 * An object (single selection) or Array of objects (multiple selection). The object describes the meta data of the selected media item.
+                 *
+                 * @example
+                 *
+                 * Wix.Dashboard.openMediaDialog(Wix.Settings.MediaType.IMAGE, false, function(data) {
+         *    // save image data
+         * });
+                 */
+                openMediaDialog: openMediaDialog
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 50 */
+    /*!*****************************************!*\
+     !*** ./js/modules/superApps/Billing.js ***!
+     \*****************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * A private namespace for the Billing of supperApps.
+         * @memberof Wix
+         * @namespace Wix.Billing
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, reporter, sharedAPI) {
+
+            var namespace = 'SuperApps.Billing';
+
+            var getProducts = function getProducts(options, onSuccess, onError) {
+                sharedAPI.getProducts(namespace, options, onSuccess, onError);
+            };
+
+            return {
+                /**
+                 * Returns an Array of objects containing product and pricing info.
+                 * @function
+                 * @memberof Wix.Billing
+                 * @since 1.76.0
+                 * @param {Object} [options] An object that can contain 'appDefinitionId' of the app to get the products for and 'currency' which defines the currency of the returned products
+                 * @param {Function} onSuccess A callback function to receive the products.
+                 * @param {Function} [onError] A callback error function.
+                 *
+                 * @example
+                 * var onError = function () {
+     *  //handle the error
+     * };
+                 * var onSuccess = function (data) {
+     *  //handle onSuccess
+     *  //sample data schema:
+     *  [{
+     *     "id": <vendorProductId>,
+     *     "name": "App Premium Package",
+     *     "price": "4.95",
+     *     "is_active": true,
+     *     "freeMonth": true,
+     *     "currencyCode": "USD",
+     *     "currencySymbol": "US$"
+     *     "monthly": {
+     *          "price": "4.95",
+     *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=MONTHLY&vendorProductId=1234"
+     *     },
+     *     "yearly": {
+     *          "price": "3.97",
+     *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=YEARLY&vendorProductId=1234"
+     *     },
+     *     "oneTime": {
+     *          "price": "5.99",
+     *          "url": "https://premium.wix.com/wix/api/tpaPriceQuote?appInstanceId=aaa-bbb&appDefinitionId=aa-bb&paymentCycle=ONE_TIME&vendorProductId=1234"
+     *     },
+     *     "bestSellingFeature": "",
+     *      "discountPercent": 20
+     *     ]
+     *  }]
+     *
+     * };
+                 * Wix.Billing.getProducts({appDefinitionId: 'appDefId', currency: 'USD'}, onSuccess, onError);
+                 */
+                getProducts: getProducts
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 51 */
+    /*!****************************************!*\
+     !*** ./js/modules/superApps/Mobile.js ***!
+     \****************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * Mobile namespace.
+         * @memberof Wix
+         * @namespace Wix.Mobile
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/utils */ 1), __webpack_require__(/*! privates/sharedAPI */ 3), __webpack_require__(/*! privates/reporter */ 2), __webpack_require__(/*! privates/postMessage */ 0)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (utils, sharedAPI, reporter, postMessage) {
+            'use strict';
+
+            var NAMESPACE = 'SuperApps.Mobile';
+
+            var isMobileDevice = function isMobileDevice(namespace) {
+                return sharedAPI.getDeviceType(namespace) === "mobile";
+            };
+
+            var showFullScreenInMobile = function showFullScreenInMobile(isFullScreen, callback) {
+                postMessage.sendMessage(postMessage.MessageTypes.SET_FULL_SCREEN_MOBILE, NAMESPACE, {
+                    'isFullScreen': isFullScreen
+                }, callback);
+            };
+
+            var showFullscreen = function showFullscreen(onSuccess, onFail) {
+                showFullScreenInMobile(true, createCallbackHandlingError(onSuccess, onFail));
+            };
+
+            var hideFullscreen = function hideFullscreen(onSuccess, onFail) {
+                showFullScreenInMobile(false, createCallbackHandlingError(onSuccess, onFail));
+            };
+
+            var setMobileActionBarButton = function setMobileActionBarButton(options, onSuccess, onFail) {
+                if (options) {
+                    var params = getMobileActionsBarParams(options);
+                    if (Object.keys(params).length > 0) {
+                        postMessage.sendMessage(postMessage.MessageTypes.SET_MOBILE_ACTION_BAR_BUTTON, NAMESPACE, params, createCallbackHandlingError(onSuccess, onFail));
+                    } else {
+                        reporter.reportSdkError('"options"{object} param must contain "visible"{boolean} or "notifications"{boolean} properties');
+                    }
+                }
+            };
+
+            var getMobileActionsBarParams = function getMobileActionsBarParams(options) {
+                var params = {};
+                if (utils.isBoolean(options.visible)) {
+                    params.visible = options.visible;
+                }
+
+                if (utils.isBoolean(options.notifications)) {
+                    params.notifications = options.notifications;
+                }
+
+                if (utils.isString(options.color)) {
+                    params.color = options.color;
+                }
+                return params;
+            };
+
+            var createCallbackHandlingError = function createCallbackHandlingError(onSuccess, onFail) {
+                return function (data) {
+                    if (data && data.error) {
+                        if (onFail) {
+                            onFail(data);
+                        }
+                    } else if (onSuccess) {
+                        onSuccess(data);
+                    }
+                };
+            };
+
+            var publicMobileAPI = {
+
+                showFullscreen: showFullscreen,
+
+                hideFullscreen: hideFullscreen,
+
+                setMobileActionBarButton: setMobileActionBarButton
+            };
+
+            var protectByMobile = function protectByMobile(func) {
+                return function () {
+                    if (isMobileDevice(NAMESPACE)) {
+                        return func.apply(null, arguments);
+                    }
+                    reporter.reportSdkError('You must switch to Mobile mode in order to use the Mobile API');
+                };
+            };
+
+            return utils.mapValues(publicMobileAPI, protectByMobile);
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 52 */
+    /*!****************************************!*\
+     !*** ./js/modules/superApps/Editor.js ***!
+     \****************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * @memberof Wix
+         * @namespace Wix.Editor
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/sharedAPI */ 3)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (sharedAPI) {
+
+            var namespace = 'SuperApps.Editor';
+
+            var addApplication = function addApplication(appDefinitionId, options, onSuccess, onError) {
+                sharedAPI.addApplication(namespace, appDefinitionId, options, onSuccess, onError);
+            };
+
+            return {
+                /**
+                 * Adds the selected application to the site if it's not already installed.
+                 * If the application is not published it will only be added if "&appDefinitionId=[APP_DEF_ID]" is added to the site url
+                 *
+                 * @function
+                 * @memberOf Wix.Editor
+                 * @since 1.83.0
+                 * @param {string} appDefinitionId the id of the app to be installed
+                 * @param {object} [options] can contain pageId (string) and shouldNavigate (boolean) properties
+                 * @param {function} [onSuccess] called after the app was installed successfully
+                 *   callback signature: function() {}
+                 * @param {function} [onError] called if there was an error during installation with the error
+                 * @example
+                 *
+                 * Wix.Editor.addApplication(
+                 *          '1380b703-ce81-ff05-f115-39571d94dfcd',
+                 *          {pageId: 'c1dmp', shouldNavigate: true},
+                 *          function(){console.log('app was installed successfully')},
+                 *          function(data){console.log(data.error)}
+                 * );
+                 */
+                addApplication: addApplication
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 53 */
+    /*!****************************************!*\
+     !*** ./js/modules/superApps/Worker.js ***!
+     \****************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * A private namespace for the Worker of supperApps.
+         * @memberof Wix
+         * @namespace Wix.Worker
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! superApps/privates/sharedAPI */ 12)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (superAppsSharedAPI) {
+            'use strict';
+
+            var namespace = 'SuperApps.Worker';
+
+            var refreshCurrentMember = function refreshCurrentMember() {
+                superAppsSharedAPI.refreshCurrentMember(namespace);
+            };
+
+            return {
+                /**
+                 * @memberof Wix.Worker
+                 * @since 1.90.0
+                 * @see Wix.refreshCurrentMember
+                 */
+                refreshCurrentMember: refreshCurrentMember
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+        /***/ }),
+    /* 54 */
+    /*!********************************************!*\
+     !*** ./js/modules/superApps/OnBoarding.js ***!
+     \********************************************/
+    /*! dynamic exports provided */
+    /*! all exports used */
+    /***/ (function(module, exports, __webpack_require__) {
+
+        "use strict";
+        var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+        /**
+         * A private namespace for the Settings of onBoarding.
+         * @memberof Wix
+         * @namespace Wix.OnBoarding
+         */
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! privates/postMessage */ 0)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (postMessage) {
+            'use strict';
+
+            var getStyleByCompId = function getStyleByCompId(compId, callback) {
+                postMessage.sendMessage(postMessage.MessageTypes.GET_STYLE_BY_COMP_ID, 'SuperApps.OnBoarding', {}, callback);
+            };
+
+            return {
+
+                /**
+                 * @memberof Wix.OnBoarding
+                 * @namespace Wix.OnBoarding.Settings
+                 */
+                Settings: {
+                    /**
+                     * @function
+                     * @memberof Wix.OnBoarding.Settings
+                     * @since 1.65.0
+                     * @param {String} compId
+                     * @example
+                     * Wix.OnBoarding.Settings.getStyleByCompId('compId', (styles)=> { '//do something w/ the given style' });
+                     * });
+                     */
+                    getStyleByCompId: getStyleByCompId
+                }
+
+            };
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+        __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
         /***/ })
     /******/ ]);

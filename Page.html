@@ -7,7 +7,7 @@
 
   </head>
   <body>
-    <h1 id="header">API Provider</h1>
+    <h1 id="header">API Page Provider</h1>
   </body>
 </html>
 
@@ -17,12 +17,12 @@
             open: function(url) {
                 Wix.openPopup(url, 300, 300);
             }
-        },['onClose']);
+        });
     }
 
     setTimeout(function () {
-        Wix.fireEvent('onClose', {a: 1, b: 2 });
-    },5000);
+        Wix.fireEvent('open', {a: 1, b: 2});
+    },2000);
 
     registerAPI();
 </script>
