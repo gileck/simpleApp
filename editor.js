@@ -1,55 +1,19 @@
 let editorSDK;
 
-function editorReady(_editorSDK, _appDefinitionId) {
+async function editorReady(_editorSDK, _appDefinitionId) {
     editorSDK = _editorSDK;
     console.log(editorSDK);
     console.log(_appDefinitionId);
-    const playButtonId = "comp-jb6azaiv";
-    const pauseButtonId = "comp-jb69oeyw";
-    const controllerId = "comp-jb510w6r";
+    const playButtonId = "comp-jchfa691";
+    const pauseButtonId = "comp-jchfa7wc";
 
-    //TODO: call this function only in the first time....
-    //addController();
+    let controllerRef;
+    const pageRef = await editorSDK.pages.getCurrent();
 
-    editorSDK.controllers.connect('token', {
-        controllerRef: {
-            type: "DESKTOP", id: controllerId
-        },
-        connectToRef: {
-            type: "DESKTOP", id: playButtonId
-        },
-        role: 'Play'
-    });
-
-    editorSDK.controllers.connect('token', {
-        controllerRef: {
-            type: "DESKTOP", id: controllerId
-        },
-        connectToRef: {
-            type: "DESKTOP", id: pauseButtonId
-        },
-        role: 'Pause'
-    });
-
-
-
-}
-
-function onEvent(event) {
-    if (event === "controllerAdded") {
-        //
-    }
-}
-
-function getAppManifest() {
-    return {
-
-    }
-}
-
-function addController() {
-    editorSDK.pages.getCurrent().then(pageRef => {
-        editorSDK.components.add('token', {
+    const controllers = await editorSDK.controllers.listAllControllers();
+    console.log(controllers);
+    if (controllers.length === 0) {
+        controllerRef = editorSDK.components.add('token', {
             componentDefinition: {
                 componentType: 'platform.components.AppController',
                 data: {
@@ -59,12 +23,39 @@ function addController() {
                 }
             },
             pageRef
-        })
-    });
+        });
+
+        editorSDK.controllers.connect('token', {
+            controllerRef,
+            connectToRef: {
+                type: "DESKTOP", id: playButtonId
+            },
+            role: 'Play'
+        });
+        editorSDK.controllers.connect('token', {
+            controllerRef,
+            connectToRef: {
+                type: "DESKTOP", id: pauseButtonId
+            },
+            role: 'Pause'
+        });
+
+    }
 }
 
-module.exports = {
-    editorReady,
-    onEvent,
-    getAppManifest
-};
+    function onEvent(event) {
+        if (event === "controllerAdded") {
+            console.log(event);
+        }
+    }
+
+    function getAppManifest() {
+        return {}
+    }
+
+
+    module.exports = {
+        editorReady,
+        onEvent,
+        getAppManifest
+    };

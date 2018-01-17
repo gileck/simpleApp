@@ -10,8 +10,8 @@ function pageReady($w) {
     playButton.onClick(() => onPlayButtonClickedCallback());
     const pauseButton = $w("@Pause");
     pauseButton.onClick(() => onPauseButtonClickedCallback());
-    // console.log(playButton);
-    // console.log(pauseButton);
+    console.log(playButton);
+    console.log(pauseButton);
 }
 
 function createControllers(controllerConfigs) {
