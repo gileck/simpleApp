@@ -10,22 +10,34 @@
   </head>
   <body>
     <h1 id="header">API Client 1</h1>
+    <button onclick="open1()">Click</button>
   </body>
 </html>
 
 <script>
-    var appDefId ="15064f58-3e9f-5ef5-dfff-017ebea202a3";
+//    var appDefId ="15064f58-3e9f-5ef5-dfff-017ebea202a3";
+    var appDefId = "1509f535-01ec-a6ce-f0d2-c08803be076b";
 
-    Wix.requireSingletonAPI(appDefId, Wix.Apps.Type.PAGE, function (api) {
-        console.log(api);
-        api.open("https://example1.com/");
-        api.onItemClick(function (eventParams) {
-            api.open("https://example2.com/");
-            console.log("event fired with params: " + JSON.stringify(eventParams));
+//    Wix.requireSingletonAPI(appDefId, Wix.Apps.Type.PAGE, function (api) {
+//        console.log(api);
+//        api.open("https://example.com/");
+////        api.onItemClick(function (eventParams) {
+////            api.open("https://example.com/");
+////            console.log("event fired with params: " + JSON.stringify(eventParams));
+////        });
+//    }, function () {
+//        console.log("ERROR!!!");
+//    });
+
+    open1();
+
+    function open1() {
+        Wix.requireSingletonAPI(appDefId, Wix.Apps.Type.PAGE, function (api) {
+            api.open("https://example.com/");
+        }, function () {
+            console.log("ERROR!!!");
         });
-    }, function () {
-        console.log("ERROR!!!");
-    });
+    }
 </script>
 
 
