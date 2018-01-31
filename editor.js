@@ -83,3 +83,22 @@ module.exports = {
     onEvent,
     getAppManifest
 };
+
+
+/*
+const META_DATA_OVERRIDES = {
+    [META_DATA_TYPES['IS_PROPORTIONALLY_RESIZABLE']]: true,
+    [META_DATA_TYPES['ENFORCE_RESIZABLE_CORNERS']]: undefined,
+    [META_DATA_TYPES['RESIZABLE_SIDES']]: [constants.RESIZE_SIDES.TOP, constants.RESIZE_SIDES.LEFT, constants.RESIZE_SIDES.BOTTOM, constants.RESIZE_SIDES.RIGHT],
+    [META_DATA_TYPES['RESIZE_ONLY_PROPORTIONALLY']]: undefined,
+    [META_DATA_TYPES['CONTAINABLE']]: false,
+    [META_DATA_TYPES['CONTAINABLE_BY_STRUCTURE']]: undefined,
+    [META_DATA_TYPES['LAYOUT_LIMITS']]: {
+        minWidth: utils.siteConstants.COMP_SIZE.MIN_WIDTH,
+        minHeight: utils.siteConstants.COMP_SIZE.MIN_HEIGHT,
+        maxWidth: utils.siteConstants.COMP_SIZE.MAX_WIDTH,
+        maxHeight: utils.siteConstants.COMP_SIZE.MAX_HEIGHT,
+        aspectRatio: 4
+    }
+};
+ */
