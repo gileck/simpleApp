@@ -20,9 +20,9 @@
 
    Wix.requireSingletonAPI(appDefId, Wix.Apps.Type.PAGE, function (api) {
        console.log(api);
-       api.open("https://example.com/");
+       api.open("https://example1.com/");
        api.onItemClick(function (eventParams) {
-           api.open("https://example.com/");
+           api.open("https://example2.com/");
            console.log("event fired with params: " + JSON.stringify(eventParams));
        });
    }, function () {
@@ -42,3 +42,5 @@
 
 
 <!-- CODE IN PRODUCTION TESTS - DO NOT CHANGE -->
+
+
