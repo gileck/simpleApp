@@ -61,13 +61,15 @@ function getAppManifest() {
                         "Play": {
                             "behavior": {
                                 "resizable": false,
-                                "toggleShowOnAllPagesEnabled": true
+                                "toggleShowOnAllPagesEnabled": true,
+                                "pinnable": true
                             }
                         },
                         "Pause": {
                             "behavior": {
                                     "resizable": 'proportional',
-                                    "toggleShowOnAllPagesEnabled": false
+                                    "toggleShowOnAllPagesEnabled": false,
+                                    "pinnable": false
                             }
                         }
                     }
